@@ -3,16 +3,19 @@
     <Typography as="h1">
       Checkly Challenge
     </Typography>
+    <Analytics />
   </div>
 </template>
 
 <script>
 import '@primer/octicons/build/build.css'
+import Analytics from './components/Analytics.vue'
 import Typography from './components/library/typography'
 
 export default {
   name: 'App',
   components: {
+    Analytics,
     Typography
   }
 }
