@@ -1,11 +1,11 @@
 <template>
-  <thead class="table-header">
-    <th>type</th>
-    <th>name</th>
-    <th class="align-center">success</th>
-    <th class="align-center">avg</th>
-    <th class="align-center">p95</th>
-    <th class="align-center">p99</th>
+  <thead class="row-height table-header">
+    <th class="type-col">type</th>
+    <th class="name-col">name</th>
+    <th class="data-col">success</th>
+    <th class="data-col">avg</th>
+    <th class="data-col">p95</th>
+    <th class="data-col">p99</th>
   </thead>
 </template>
 
@@ -18,7 +18,6 @@ export default {
 <style scoped>
 .table-header {
   border-bottom: 1px solid #000000;
-  height: 28px;
   text-transform: uppercase;
 }
 </style>
