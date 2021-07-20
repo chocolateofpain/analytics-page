@@ -1,13 +1,12 @@
 <template>
-  <div class="check-item-wrapper">
-    <Icon name="chevron-down" />
-    <div>{{ checkItemData.type }}</div>
-    <div>{{ checkItemData.name }}</div>
-    <div>{{ checkItemData.success }}</div>
-    <div>{{ checkItemData.avg }}</div>
-    <div>{{ checkItemData.p95 }}</div>
-    <div>{{ checkItemData.p99 }}</div>
-  </div>
+  <tr>
+    <td><Icon name="chevron-right" :width="12" /><span class="type">{{ checkItemData.type }}</span></td>
+    <td>{{ checkItemData.name }}</td>
+    <td class="align-center">{{ Math.floor(checkItemData.success * 100) }}%</td>
+    <td class="align-center">{{ Math.round(checkItemData.avg) }}ms</td>
+    <td class="align-center">{{ Math.round(checkItemData.p95) }}ms</td>
+    <td class="align-center">{{ Math.round(checkItemData.p99) }}ms</td>
+  </tr>
 </template>
 
 <script>
@@ -26,7 +25,13 @@ export default {
 </script>
 
 <style scoped>
-.check-item-wrapper {
-  display: grid;
+.type {
+  margin-left: 4px;
+  vertical-align: middle;
+
+}
+tr {
+  border-bottom: 1px solid #D2D2D2;
+  height: 38px;
 }
 </style>
