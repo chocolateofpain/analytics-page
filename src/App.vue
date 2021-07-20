@@ -23,27 +23,34 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 * {
   box-sizing: border-box;
-  border: none;
-}
-
-#app {
-  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  padding: 16px 0 16px 16px;
-  display: flex;
-  height: 100vh;
 }
 /* remove default styling from user agent style sheet */
 th {
   font-weight: 400;
   /* text-align: left; */
 }
-.align-center {
-  text-align: center;
+#app {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  font-weight: 400;
+  padding: 16px 0 16px 16px;
+  display: flex;
+  height: 100vh;
 }
-.align-left {
+.type-col {
   text-align: left;
+  width: 100px;
+}
+.name-col {
+  text-align: left;
+}
+.data-col {
+  text-align: center;
+  width: 65px;
+}
+.row-height {
+  height: 38px;
 }
 </style>

@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import '@primer/octicons/build/build.css'
 import axios from 'axios';
 import CheckList from './CheckList.vue'
 import CheckListHeader from './CheckListHeader.vue'

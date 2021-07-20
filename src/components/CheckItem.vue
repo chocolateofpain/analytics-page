@@ -1,12 +1,22 @@
 <template>
-  <tr>
-    <td><Icon name="chevron-right" :width="12" /><span class="type">{{ checkItemData.type }}</span></td>
+  <table class="table-check-item">
+  <tr v-on:click="onClickButton" class="row-height">
+    <td class="type-col">
+      <Icon :name="showGraph ? 'chevron-down' : 'chevron-right'" :width="12"/>
+      <span class="type">{{ checkItemData.type }}</span>
+    </td>
     <td>{{ checkItemData.name }}</td>
-    <td class="align-center">{{ Math.floor(checkItemData.success * 100) }}%</td>
-    <td class="align-center">{{ Math.round(checkItemData.avg) }}ms</td>
-    <td class="align-center">{{ Math.round(checkItemData.p95) }}ms</td>
-    <td class="align-center">{{ Math.round(checkItemData.p99) }}ms</td>
+    <td class="data-col align-center">{{ Math.floor(checkItemData.success * 100) }}%</td>
+    <td class="data-col align-center">{{ Math.round(checkItemData.avg) }}ms</td>
+    <td class="data-col align-center">{{ Math.round(checkItemData.p95) }}ms</td>
+    <td class="data-col align-center">{{ Math.round(checkItemData.p99) }}ms</td>
   </tr>
+  <tr v-show="showGraph">
+    <td colspan="6">
+      <div>This is a graph</div>
+    </td>
+  </tr>
+  </table>
 </template>
 
 <script>
@@ -14,13 +24,23 @@ import '@primer/octicons/build/build.css'
 import Icon from './library/icon/Icon.vue'
 
 export default {
-  name: 'checkItem',
+  name: 'CheckItem',
   components: {
     Icon,
-  }, 
+  },
   props: [
-    "checkItemData"
-  ]
+    "checkItemData", 
+  ],
+  data () {
+    return {
+      showGraph: false
+    }
+  },
+  methods: {
+    onClickButton () {
+      this.showGraph = !this.showGraph
+    }
+  }
 }
 </script>
 
@@ -28,10 +48,11 @@ export default {
 .type {
   margin-left: 4px;
   vertical-align: middle;
-
 }
-tr {
+.table-check-item {
   border-bottom: 1px solid #D2D2D2;
-  height: 38px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
 }
 </style>
