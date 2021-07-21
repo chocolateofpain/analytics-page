@@ -13,7 +13,7 @@
   </tr>
   <tr v-show="showGraph">
     <td colspan="6">
-      <div>This is a graph</div>
+      <CheckItemChart />
     </td>
   </tr>
   </table>
@@ -21,11 +21,13 @@
 
 <script>
 import '@primer/octicons/build/build.css'
+import CheckItemChart from './CheckItemChart.vue'
 import Icon from './library/icon/Icon.vue'
 
 export default {
   name: 'CheckItem',
   components: {
+    CheckItemChart,
     Icon,
   },
   props: [
