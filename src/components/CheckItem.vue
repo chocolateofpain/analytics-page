@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import '@primer/octicons/build/build.css'
 import CheckItemChart from './CheckItemChart.vue'
 import Icon from './library/icon/Icon.vue'
 
