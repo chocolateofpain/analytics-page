@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Analytics snapshots should render component 1`] = `
+<div class="analytics-container align-left">
+  <div class="analytics-content">
+    <p class="analytics-title typography typography--p      ">
+      Reporting
+    </p> <small class="typography typography--small      ">
+      Analyse long term performance of your checks and export aggregated metrics for external reporting duties.
+    </small>
+    <table class="checks-table">
+      <colgroup>
+        <col class="type-col">
+        <col class="name-col">
+        <col span="4" class="data-cols">
+      </colgroup>
+      <thead class="row-height table-header">
+        <th class="type-col">type</th>
+        <th class="name-col">name</th>
+        <th class="data-col">success</th>
+        <th class="data-col">avg</th>
+        <th class="data-col">p95</th>
+        <th class="data-col">p99</th>
+      </thead>
+      <tbody>
+        <td colspan="6"></td>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

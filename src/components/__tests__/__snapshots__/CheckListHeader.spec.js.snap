@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckListHeader snapshots should render component 1`] = `
+<thead class="row-height table-header">
+  <th class="type-col">type</th>
+  <th class="name-col">name</th>
+  <th class="data-col">success</th>
+  <th class="data-col">avg</th>
+  <th class="data-col">p95</th>
+  <th class="data-col">p99</th>
+</thead>
+`;

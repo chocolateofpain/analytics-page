@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation snapshots should render component 1`] = `
+<div class="navigation">
+  <div class="nav-link-empty"></div> <small class="nav-link-reporting typography typography--small   typography--uppercase   ">
+    Reporting
+  </small>
+</div>
+`;
