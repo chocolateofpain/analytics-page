@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CheckList snapshots should render component 1`] = `
+exports[`CheckList snapshots should render component if data is available 1`] = `
 <tbody>
-  <td colspan="6"></td>
+  <!---->
+</tbody>
+`;
+
+exports[`CheckList snapshots should render component if no data is available 1`] = `
+<tbody>
+  <!---->
 </tbody>
 `;

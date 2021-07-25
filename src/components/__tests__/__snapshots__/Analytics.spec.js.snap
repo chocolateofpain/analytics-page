@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Analytics snapshots should render component 1`] = `
+exports[`Analytics snapshots should render component when checks !== null 1`] = `
 <div class="analytics-container align-left">
   <div class="analytics-content">
     <p class="analytics-title typography typography--p      ">
@@ -23,7 +23,68 @@ exports[`Analytics snapshots should render component 1`] = `
         <th class="data-col">p99</th>
       </thead>
       <tbody>
-        <td colspan="6"></td>
+        <td colspan="6">
+          <table class="table-check-item">
+            <tr class="row-height">
+              <td class="type-col">
+                <div class="icon"><svg version="1.1" width="12" height="12" viewBox="0 0 16 16" class="octicon octicon-chevron-right" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+                  </svg></div> <span class="type">BROWSER</span>
+              </td>
+              <td>Check 1</td>
+              <td class="data-col align-center">49%</td>
+              <td class="data-col align-center">499ms</td>
+              <td class="data-col align-center">948ms</td>
+              <td class="data-col align-center">989ms</td>
+            </tr>
+            <!---->
+          </table>
+          <table class="table-check-item">
+            <tr class="row-height">
+              <td class="type-col">
+                <div class="icon"><svg version="1.1" width="12" height="12" viewBox="0 0 16 16" class="octicon octicon-chevron-right" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+                  </svg></div> <span class="type">API</span>
+              </td>
+              <td>Check 2</td>
+              <td class="data-col align-center">49%</td>
+              <td class="data-col align-center">497ms</td>
+              <td class="data-col align-center">949ms</td>
+              <td class="data-col align-center">989ms</td>
+            </tr>
+            <!---->
+          </table>
+        </td>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Analytics snapshots should render component when checks === null 1`] = `
+<div class="analytics-container align-left">
+  <div class="analytics-content">
+    <p class="analytics-title typography typography--p      ">
+      Reporting
+    </p> <small class="typography typography--small      ">
+      Analyse long term performance of your checks and export aggregated metrics for external reporting duties.
+    </small>
+    <table class="checks-table">
+      <colgroup>
+        <col class="type-col">
+        <col class="name-col">
+        <col span="4" class="data-cols">
+      </colgroup>
+      <thead class="row-height table-header">
+        <th class="type-col">type</th>
+        <th class="name-col">name</th>
+        <th class="data-col">success</th>
+        <th class="data-col">avg</th>
+        <th class="data-col">p95</th>
+        <th class="data-col">p99</th>
+      </thead>
+      <tbody>
+        <!---->
       </tbody>
     </table>
   </div>
