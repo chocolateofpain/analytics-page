@@ -11,7 +11,7 @@
     <td class="data-col align-center">{{ Math.round(checkItemData.p95) }}ms</td>
     <td class="data-col align-center">{{ Math.round(checkItemData.p99) }}ms</td>
   </tr>
-  <tr v-show="showGraph">
+  <tr v-if="showGraph">
     <td colspan="6">
       <CheckItemChart />
     </td>
