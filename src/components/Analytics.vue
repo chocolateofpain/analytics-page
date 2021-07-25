@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 import CheckList from './CheckList.vue'
 import CheckListHeader from './CheckListHeader.vue'
 import Typography from './library/typography/Typography.vue'
@@ -35,13 +35,20 @@ export default {
   },
   data () {
     return {
-      checks: null
+      checks: null,
+      errors: null
     }
   },
   created () {
-    axios
+    this.fetchChecks()
+  },
+  methods: {
+    fetchChecks: function() { 
+      axios
       .get('http://localhost:3000/checks')
       .then(response => (this.checks = response.data))
+      .catch(error => this.errors = error)
+    }
   }
 }
 </script>
