@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import CheckList from '../CheckList.vue'
 
-describe.only('CheckList', () => {
+describe('CheckList', () => {
   it('should be defined', () => {
     expect(CheckList).toBeDefined()
   })
