@@ -26,15 +26,16 @@ export default {
   name: 'Searchbar',
   methods: {
     onSlashFocusInput: function (event) {
-      if (event.key === '/')
-      this.$refs.input.focus();
+      if (event.key === '/') {
+        this.$refs.input.focus();
+      }
     }
   },
   mounted() {
-        document.addEventListener('keydown', this.onSlashFocusInput);
+    document.addEventListener('keyup', this.onSlashFocusInput);
   },
   beforeDestroy() {
-      document.removeEventListener('keydown', this.onSlashFocusInput);
+    document.removeEventListener('keyup', this.onSlashFocusInput);
   },
   props: {
     placeholder: null,
@@ -53,13 +54,19 @@ export default {
   color: #000;
   display: inline-block;
   height: 28px;
-  padding: 7px;
+  margin: 4px;
+  padding-left: 7px;
   width:300;
+}
+.searchbar:focus-within {
+  // ugly, but I removed the outline on the input field so I wanted some visual cue for the focused state
+  box-shadow: 0px 0px 4px 2px #171FFF;
 }
 .searchbar-input {
   background: none;
   border: none;
-  height: 100%
+  height: 100%;
+  outline: none;
 }
 ::placeholder { 
   color: #000;
