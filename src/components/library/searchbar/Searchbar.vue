@@ -1,7 +1,7 @@
 <template>
   <div 
     class="searchbar"
-    :style="{ width: this.focused ? this.widthInput + 50 + 'px' : this.widthInput + 'px'}"
+    :style="{ width: this.focused ? (this.widthInput + 50) + 'px' : this.widthInput + 'px'}"
   >
     <Icon name="search" />
     <input
@@ -66,10 +66,16 @@ export default {
     document.removeEventListener('keyup', this.onSlashFocusInput);
   },
   props: {
+    /**
+    * Adds a placeholder text
+    */
     placeholder: {
       type: String,
       default: null
     },
+    /**
+    * Sets width of the Searchbar, 50px are added on focus
+    */
     minWidth: {
       type: Number,
       default: 200
@@ -81,19 +87,21 @@ export default {
 <style lang="scss" scoped>
 .searchbar {
   align-items: center;
-  background: #E5E5E5;
+  background: rgba(237, 237, 237, 1);
   border-radius: 4px;
+  box-sizing: border-box;
   color: #000;
   display: flex;
-  height: 28px;
+  height: 32px;
   margin: 4px;
   padding: 0 7px;
 }
 .searchbar:focus-within {
-  background-color: #EDEDED;
-  // ugly, but I removed the outline on the input field so I wanted some visual cue for the focused state
-  box-shadow: 0px 0px 4px 2px #171FFF;
-  border: 1px solid #EDEDED;
+  background-color: rgba(237, 237, 237, 0.4);
+  // I removed the outline on the input field so I wanted some visual cue for the focused state
+  // yes, I agree, it is ugly. Uncomment the box-shadow property to assess the level of ugliness
+  // box-shadow: 0px 0px 4px 2px #171FFF;
+  border: 1px solid rgba(237, 237, 237, 1);
 }
 .searchbar-input {
   background: none;
