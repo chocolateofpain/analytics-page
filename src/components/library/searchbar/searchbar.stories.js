@@ -4,17 +4,21 @@ export default {
   title: 'Design System/Searchbar',
   component: Searchbar,
   argTypes: {
-    placeholder: { control: {type: 'text' } },
     minWidth: { control: { type: 'number' } },
+    placeholder: { control: {type: 'text' } },
+    value: { control: false }
   },
 }
 
 export const Default = (args, { argTypes }) => ({
   components: { Searchbar },
-  props: Object.keys(argTypes),
+  data () {
+    return { value: ''}
+  },
+  props: Object.keys(argTypes).filter(x => x !== 'value'),
   template: `
     <div>
-      <Searchbar v-bind="$props" v-on="props" />
+      <Searchbar v-bind="$props" v-on="props" v-model="value"/>
     </div>
   `
 })
