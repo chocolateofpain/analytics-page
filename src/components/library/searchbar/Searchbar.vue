@@ -13,11 +13,11 @@
       :placeholder="placeholder"
       ref="input"
       type="text"
-      v-model="searchbar"
+      v-model="searchTerm"
     />
     <div
       @click="onClickClearInput"
-      v-show="searchbar.length > 0"
+      v-show="searchTerm.length > 0"
     >
       <Icon
         name="x"
@@ -33,10 +33,19 @@ export default {
   components: {
     Icon
   },
+  computed: {
+    searchTerm: {
+      get() {
+        return this.value;
+      },
+      set(value) {
+        this.$emit('input', value);
+      }
+    }
+  },
   data () {
     return {
       focused: false,
-      searchbar: '',
       showClearButton: false,
       widthInput: this.minWidth
     }
@@ -44,10 +53,10 @@ export default {
   name: 'Searchbar',
   methods: {
     onClickClearInput () {
-      return this.searchbar = ''
+      return this.searchTerm = ''
     },
     onInput () {
-      if (this.searchbar > 0) {
+      if (this.searchTerm > 0) {
         this.showClearButton = true
       } else {
         this.showClearButton = false
@@ -79,6 +88,14 @@ export default {
     minWidth: {
       type: Number,
       default: 200
+    },
+    /**
+    * Binds value of input in Searchbar component to v-model directive set on <Searchbar /> in parent component.
+    * Example: \<Searchbar v-model="myVeryOwnVariableName" />
+    */
+    value: {
+      type: String,
+      required: true,
     }
   }
 }
