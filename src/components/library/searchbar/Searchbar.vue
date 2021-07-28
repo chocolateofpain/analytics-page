@@ -2,6 +2,7 @@
   <div 
     class="searchbar"
     :style="{ width: this.focused ? (this.widthInput + 50) + 'px' : this.widthInput + 'px'}"
+
   >
     <Icon name="search" />
     <input
@@ -16,7 +17,8 @@
       v-model="searchTerm"
     />
     <div
-      @click="onClickClearInput"
+      @mousedown="onClickClearInput"
+      class="clear-input"
       v-show="searchTerm.length > 0"
     >
       <Icon
@@ -53,10 +55,10 @@ export default {
   name: 'Searchbar',
   methods: {
     onClickClearInput () {
-      return this.searchTerm = ''
+      this.searchTerm = ''
     },
     onInput () {
-      if (this.searchTerm > 0) {
+      if (this.searchTerm.length > 0) {
         this.showClearButton = true
       } else {
         this.showClearButton = false
@@ -102,31 +104,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// TODO: improve styling from user agent stylesheet for internal autofill
 .searchbar {
   align-items: center;
   background: rgba(237, 237, 237, 1);
+  // avoid jumpy UI on focus
+  border: 1px solid rgba(237, 237, 237, 1);
   border-radius: 4px;
   box-sizing: border-box;
   color: #000;
   display: flex;
-  height: 32px;
+  height: 28px;
   margin: 4px;
   padding: 0 7px;
+  position: relative;
 }
 .searchbar:focus-within {
   background-color: rgba(237, 237, 237, 0.4);
-  // I removed the outline on the input field so I wanted some visual cue for the focused state
-  // yes, I agree, it is ugly. Uncomment the box-shadow property to assess the level of ugliness
-  // box-shadow: 0px 0px 4px 2px #171FFF;
   border: 1px solid rgba(237, 237, 237, 1);
 }
 .searchbar-input {
   background: none;
   border: none;
   height: 100%;
-  padding-left: 7px;
+  padding: 0 30px 0 30px;
+  position: absolute;
+  // removing this is not recommended and means implementing a visual cue for focus state
+  // I haven't done this in this case since it's not part of the design
   outline: none;
+  left: 0;
   width: 100%;
+}
+.clear-input {
+  position: absolute;
+  right: 0;
+  width: 25px;
 }
 ::placeholder { 
   color: #000;
