@@ -64,6 +64,7 @@ export default {
         this.showClearButton = false
       }
     },
+    // TODO add UI hint for keyboard shortcut
     onSlashFocusInput: function (event) {
       if (event.key === '/') {
         this.$refs.input.focus();
