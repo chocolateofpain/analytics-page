@@ -25,9 +25,9 @@ export default {
   box-sizing: border-box;
 }
 /* remove default styling from user agent style sheet */
+/* TODO: move to main styling file for resetting everywhere */
 th {
   font-weight: 400;
-  /* text-align: left; */
 }
 #app {
   font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
