@@ -10,10 +10,7 @@ import { formatDataForHighchartsSeries } from './utils'
 export default {
   name: 'CheckItemChart',
   components: {
-    highcharts: Chart,
-  },
-  computed: {
-    
+    highcharts: Chart
   },
   created () {
     axios
@@ -27,13 +24,8 @@ export default {
       chartOptions: {
         xAxis: {
           type: 'datetime',
-          // min: Date.UTC(2021, 7, 25),
-          // dateTimeLabelFormats: {
-          //   hour: '%H:%M',
-          // }
         },
         yAxis: {
-        // type: 'datetime',
         title: '',
         },
         legend: {
@@ -46,7 +38,6 @@ export default {
               label: {
                   connectorAllowed: false
               },
-              // pointStart: Date.UTC(2000, 7, 25)
           }
         },
         series: [],

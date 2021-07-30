@@ -13,7 +13,7 @@ import Typography from './library/typography/Typography.vue'
 export default {
   name: 'Navigation',
   components: {
-    Typography,
+    Typography
   }, 
   props: [
     'checksCategory'

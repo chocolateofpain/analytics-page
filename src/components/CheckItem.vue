@@ -27,10 +27,10 @@ export default {
   name: 'CheckItem',
   components: {
     CheckItemChart,
-    Icon,
+    Icon
   },
   props: [
-    "checkItemData", 
+    'checkItemData'
   ],
   data () {
     return {

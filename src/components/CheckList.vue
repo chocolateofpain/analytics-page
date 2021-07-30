@@ -19,10 +19,10 @@ import CheckItem from './CheckItem.vue'
 export default {
   name: 'CheckList',
   components: {
-    CheckItem,
+    CheckItem
   },
   props: [
-    "checks"
+    'checks'
   ],
 }
 </script>
