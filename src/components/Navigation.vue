@@ -16,7 +16,7 @@ export default {
     Typography,
   }, 
   props: [
-    "checksCategory"
+    'checksCategory'
   ]
 }
 </script>
