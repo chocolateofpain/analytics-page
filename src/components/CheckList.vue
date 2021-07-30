@@ -9,6 +9,7 @@
     <td colspan="6" v-else-if="checks && checks.length === 0">
       <p>We don't have any data yet. Create a new check to start aggregating data.</p>
     </td>
+    <!-- TODO: add loading spinner -->
   </tbody>
 </template>
 

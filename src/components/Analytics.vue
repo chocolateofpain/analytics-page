@@ -36,14 +36,15 @@ export default {
   data () {
     return {
       checks: null,
-      errors: null
+      errors: null,
+      searchterm: ''
     }
   },
   created () {
     this.fetchChecks()
   },
   methods: {
-    fetchChecks: function() { 
+    fetchChecks: function () { 
       axios
       .get('http://localhost:3000/checks')
       .then(response => (this.checks = response.data))

@@ -3,28 +3,53 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { Chart } from 'highcharts-vue'
-
-// just for styling purposes
-const timeNow = new Date()
-const finalTime = new Date(timeNow.getTime() - (7 * 24 * 3600 * 1000))
+import { formatDataForHighchartsSeries } from './utils'
 
 export default {
   name: 'CheckItemChart',
   components: {
     highcharts: Chart,
   },
-  data() {
+  computed: {
+    
+  },
+  created () {
+    axios
+      .get('http://localhost:3000/check_stats')
+      .then(response => formatDataForHighchartsSeries(response.data, ['avg', 'p95', 'p99']))
+      .then(response => this.chartOptions.series = response)
+  },
+  data () {
     return {
+      chartData: null,
       chartOptions: {
         xAxis: {
-        type: 'datetime'
+          type: 'datetime',
+          // min: Date.UTC(2021, 7, 25),
+          // dateTimeLabelFormats: {
+          //   hour: '%H:%M',
+          // }
         },
-        series: [{
-          data: [1,2,3], // sample data
-          pointStart: Date.UTC(finalTime.getFullYear(), finalTime.getMonth(), finalTime.getDate()),
-          pointInterval: 3 * 3600 * 1000 // one hour
-        }],
+        yAxis: {
+        // type: 'datetime',
+        title: '',
+        },
+        legend: {
+        align: 'right',
+        verticalAlign: 'top',
+        layout: 'vertical',
+        },
+        plotOptions: {
+          series: {
+              label: {
+                  connectorAllowed: false
+              },
+              // pointStart: Date.UTC(2000, 7, 25)
+          }
+        },
+        series: [],
         title: '',
         subtitle: ''
       }
