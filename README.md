@@ -59,11 +59,22 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 To run this application you should: 
 
-- Start the DB: npm run backend
+- Run the setup command above.
 
-- Start development env: npm run serve
+- Start the DB: 
+  ```
+  npm run backend
+  ```
 
-- Take a look at your localhost
+- Start development env:
+  ```
+  npm run serve
+  ```
+  
+- Take a look at your localhost. It should spark joy.
+
+
+- To check out the work on Storybook run the command for it above. You should be able to play around with it using Storybook controls. 
 
 
 A few notes: 
