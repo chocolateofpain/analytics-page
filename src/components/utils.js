@@ -1,3 +1,6 @@
+// Sidenote: this is not the most elegant way of writing this 
+// but I privileged having clear steps of how the data is supposed to be handled and what I wanted to achieve.
+
 // TODO: add tests for each function
 const dateNow = Date.now()
 
